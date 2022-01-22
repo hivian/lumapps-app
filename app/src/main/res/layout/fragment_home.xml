@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/white"
-            app:visible="@{viewModel.networkState.loading}" >
+            visible="@{viewModel.networkState.loading}" >
 
             <androidx.core.widget.ContentLoadingProgressBar
                 android:id="@+id/loadingBar"
@@ -41,6 +41,14 @@
                 android:layout_gravity="center" />
 
         </FrameLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:gravity="center"
+            visible="@{viewModel.displayErrorMessage}"
+            errorMessage="@{viewModel.networkState}" />
 
     </FrameLayout>
 
