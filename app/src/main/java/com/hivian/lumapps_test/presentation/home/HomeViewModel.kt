@@ -23,6 +23,11 @@ class HomeViewModel(application: Application): AndroidViewModel(application) {
 
     val clickEvent = SingleLiveData<HomeListViewEvent>()
 
+    var displayErrorMessage: LiveData<Boolean> =
+        Transformations.map(data) {
+            it.isEmpty() && networkState.value is NetworkState.Error
+        }
+
     init {
         fetchRandomUsers()
     }

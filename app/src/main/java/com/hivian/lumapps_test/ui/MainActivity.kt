@@ -1,4 +1,4 @@
-package com.hivian.lumapps_test
+package com.hivian.lumapps_test.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.hivian.lumapps_test.R
 import com.hivian.lumapps_test.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

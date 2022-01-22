@@ -1,5 +1,7 @@
 package com.hivian.lumapps_test.common
 
+import com.github.ajalt.timberkt.e
+
 open class BaseRepository {
 
     suspend fun <T : Any> safeApiCall(call: suspend () -> T) : Resource<T> {
@@ -9,6 +11,7 @@ open class BaseRepository {
                 response
             )
         } catch (exception: Exception) {
+            e { "Network error: $exception" }
             Resource.Error("Network error")
         }
     }
