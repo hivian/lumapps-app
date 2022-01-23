@@ -51,8 +51,13 @@ class HomeFragment : Fragment() {
             adapter = viewAdapter
             addItemDecoration(DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL))
         }
+    }
 
-        (requireActivity() as AppCompatActivity).supportActionBar?.title = "Random Users"
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        (requireActivity() as AppCompatActivity).supportActionBar?.title =
+            requireContext().getString(R.string.home_fragment_title)
     }
 
     private fun handleEvent(homeListViewEvent: HomeListViewEvent) {

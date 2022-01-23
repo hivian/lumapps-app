@@ -34,10 +34,11 @@ class DetailFragment : Fragment() {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
 
-        (requireActivity() as AppCompatActivity).supportActionBar?.title = "User detail"
+        (requireActivity() as AppCompatActivity).supportActionBar?.title =
+            requireContext().getString(R.string.detail_fragment_title)
     }
 
 }
