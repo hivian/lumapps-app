@@ -16,9 +16,9 @@ class RandomUsersRepository(application: Application): BaseRepository() {
 
     val randomsUsersLocal: LiveData<List<RandomUserDTO>> = randomsUsersDao.getAllRandomUsers()
 
-    suspend fun fetchRandomUsers(): Resource<List<RandomUserDTO>> {
+    suspend fun fetchRandomUsers(page: Int, results: Int): Resource<List<RandomUserDTO>> {
         val safeCall = safeApiCall {
-            httpRetrofit.fetchRandomUsers()
+            httpRetrofit.fetchRandomUsers(page, results)
         }
         if (safeCall is Resource.Success)
             saveRandomUsers(safeCall.data)
