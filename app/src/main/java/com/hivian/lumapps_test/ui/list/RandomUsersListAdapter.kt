@@ -10,7 +10,7 @@ import com.hivian.lumapps_test.databinding.RandomUserItemBinding
 import com.hivian.lumapps_test.presentation.home.HomeViewModel
 
 class RandomUsersListAdapter(val viewModel: HomeViewModel) : ListAdapter<RandomUserDomain, RecyclerView.ViewHolder>(object : DiffUtil.ItemCallback<RandomUserDomain>() {
-    override fun areItemsTheSame(old: RandomUserDomain, new: RandomUserDomain): Boolean = old.id == old.id
+    override fun areItemsTheSame(old: RandomUserDomain, new: RandomUserDomain): Boolean = old.id == new.id
     override fun areContentsTheSame(old: RandomUserDomain, new: RandomUserDomain): Boolean = old == new
 }) {
 
